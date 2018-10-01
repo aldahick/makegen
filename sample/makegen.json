@@ -1,0 +1,8 @@
+{
+	"dirs": {
+		"headers": ["./inc"],
+		"sources": ["./src"]
+	},
+	"libs": ["sfml-system"],
+	"out": "makegen-test"
+}
