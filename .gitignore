@@ -1,0 +1,3 @@
+*.gch
+sample/Makefile
+sample/obj

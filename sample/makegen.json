@@ -3,6 +3,7 @@
 		"headers": ["./inc"],
 		"sources": ["./src"]
 	},
-	"libs": ["sfml-system"],
-	"out": "makegen-test"
+	"libs": [],
+	"out": "bin/sample",
+  "flags": ""
 }
