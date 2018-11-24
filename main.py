@@ -80,7 +80,7 @@ class MakefileGenerator:
         for name in self.tree:
             object_file = "obj/{}.o".format(name)
             node = [node for node in self.nodes if node["name"] == name][0]
-            dependencies = " ".join(["obj/{}.o".format(dep) for dep in self.dependencies[name]])
+            dependencies = " ".join(["obj/{}.o".format(dep) for dep in self.dependencies[name]]) + " " + node["source"]
             body.append("{object_file}: {dependencies}\n\t$(COMPILER) $(COMPILER_FLAGS) $(COMPILER_HEADERS) -c {source} -o {object_file} $(COMPILER_LIBRARIES)".format(
                 object_file=object_file, dependencies=dependencies, source=node["source"]
             ))
