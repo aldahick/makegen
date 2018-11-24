@@ -58,7 +58,6 @@ class MakefileGenerator:
         self.nodes = nodes
 
     def build_tree(self):
-        print(self.nodes)
         dependencies = {}
         for node in self.nodes:
             source = read_file(node["source"])
@@ -68,7 +67,6 @@ class MakefileGenerator:
             dependencies[node["name"]] = {n["name"] for n in list(itertools.chain.from_iterable(raw_dependencies))}
         self.dependencies = dependencies
         self.tree = toposort_flatten(dependencies)
-        print(self.tree)
 
     def write_file(self):
         handle = open("./Makefile", "w")
